@@ -22,12 +22,10 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
 		try {
-			// Carrega a tela num objeto do tipo Parent que é superclasse do 
-			// AnchorPane do fxml (por isso da certo, pois é um upcasting).
 			Parent parent = FXMLLoader.load(getClass().getResource("/gui/View.fxml"));
 			Scene scene = new Scene(parent);
-			stage.setScene(scene); // O palco vai ter a cena.
-			stage.show(); // Mostra o palco na tela.
+			stage.setScene(scene);
+			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
