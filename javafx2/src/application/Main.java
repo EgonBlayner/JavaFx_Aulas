@@ -1,0 +1,42 @@
+package application;
+
+import java.io.IOException;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+// Uma aplicação JavaFx tem que extender de Application.
+// Somos obrigados a implementar o método start.
+
+/*
+ * OBS: Existem ainda os métodos init e stop. O init é para coisas que 
+ * queremos que aconteça antes da aplicação iniciar e o stop é para coisas
+ * que queremos que aconteça depois da aplicação terminar. O único método
+ * obrigatório é o start.
+ */
+public class Main extends Application {
+	// O palco (stage) vem como argumento no método start.
+	@Override
+	public void start(Stage stage) {
+		try {
+			// Carrega a tela num objeto do tipo Parent que é superclasse do 
+			// AnchorPane do fxml (por isso da certo, pois é um upcasting).
+			Parent parent = FXMLLoader.load(getClass().getResource("/gui/View.fxml"));
+			Scene scene = new Scene(parent);
+			stage.setScene(scene); // O palco vai ter a cena.
+			stage.show(); // Mostra o palco na tela.
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	// Ponto de entrada da aplicação.
+	public static void main(String[] args) {
+		// Método estático da classe Application que serve para
+		// iniciar uma aplicação JavaFx.
+		launch(args);
+	}
+}
