@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 
 public class ViewController {
 	
-	// Tipo Button 
+	// Id.
 	@FXML
 	private Button btMyButton;
 	
